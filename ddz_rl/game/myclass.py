@@ -7,7 +7,7 @@ Created on Thu Jul 13 21:55:58 2017
 from __future__ import print_function
 from __future__ import absolute_import
 from .gameutil import card_show, choose, game_init
-
+import jsonpickle
 ############################################
 #                 游戏类                   #
 ############################################                   
@@ -45,8 +45,8 @@ class Game(object):
     #返回扑克牌记录类
     def get_record(self):
         web_show = WebShow(self.playrecords)
-        #return jsonpickle.encode(web_show, unpicklable=False)
-        return web_show
+        return jsonpickle.encode(web_show, unpicklable=False)
+        #return web_show
     
     #返回下次出牌列表
     def get_next_moves(self):
